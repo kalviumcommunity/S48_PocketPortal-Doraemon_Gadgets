@@ -1,9 +1,11 @@
-#working
-
 POCKET PORTAL: DORAEMON'S GADGETS
 
-- This project is dedicated to the magical world tucked inside of Doraemon's pocket.
-- From the iconic anywhere-door to the mesmerizing time-cloth, PocketPortal offers a delightful showcase of Doraemons' gadgets.
-- A platform where users can sign up and make a personalized list of their favorite Doraemon gadgets.
-- They can also make a list of things they would like to do with those gadgets.
-- So let's reminisce about the classic childhood moments and dive into the nostalgia of Doraemon's extraordinary pocket dimension.
+- ## About
+From the iconic Anywhere Door to the mesmerizing Time Cloth, Pocket Portal offers an engaging showcase of Doraemon's delightful gadgets. Immerse yourself in the magic of these timeless inventions and relive the classic moments from your childhood
+
+## Features
+- **Personalized Lists:** Users can sign up and create personalized lists of their favorite Doraemon gadgets.
+- **Activity Planning:** Plan and make lists of exciting things you would like to do with these gadgets.
+- **Nostalgic Journey:** Join us on a journey to reminisce about the classic childhood moments and dive into the nostalgia of Doraemon's extraordinary pocket dimension.
+
+ 
