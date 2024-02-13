@@ -1,11 +1,11 @@
 {
   "name": "s48_pocketportal-doraemon_gadgets",
   "version": "1.0.0",
-  "description": "",
+  "description": "A collection of Doraemon gadgets for the s48_pocketportal project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "RAJASTHANI_PAWAN",
   "license": "ISC"
 }
