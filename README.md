@@ -1,5 +1,8 @@
 POCKET PORTAL: DORAEMON'S GADGETS
 
+DEPLOYED LINK:
+https://pocketportal-doraemon-gadgets.onrender.com/
+
 - ## About
 From the iconic Anywhere Door to the mesmerizing Time Cloth, Pocket Portal offers an engaging showcase of Doraemon's delightful gadgets. Immerse yourself in the magic of these timeless inventions and relive the classic moments from your childhood
 
