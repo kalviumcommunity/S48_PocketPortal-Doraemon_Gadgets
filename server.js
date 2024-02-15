@@ -5,7 +5,7 @@ require('dotenv').config()
 console.log(process.env)
 
 // define the ping route
-app.get('/env',(req,res)=>{
+app.get('/',(req,res)=>{
   let projectname=process.env.projectname
   let authorname=process.env.authorname
   res.json({projectname,authorname})
