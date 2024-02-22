@@ -1,0 +1,21 @@
+#root {
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+#nav{
+  display: flex;
+  height: 10vw;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  width: 100vw;
+}
+img{
+  height: 50%;
+}
+#pocket{
+  border:5px solid #26a9e1
+}

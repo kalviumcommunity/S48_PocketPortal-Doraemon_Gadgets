@@ -31,7 +31,7 @@ router.post('/Gadgets', (req,res)=>{
 
 // Update an item by ID
 router.put('/Gadgets/:id', (req, res) => {
-  const id = parseInt(req.params.id);
+  const id = parseInt(req.params.id); 
   const updatedGadget = Gadgets.find((item) => item.id === id);
 
   if (updatedGadget) {
