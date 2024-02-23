@@ -2,6 +2,7 @@ POCKET PORTAL: DORAEMON'S GADGETS
 
 - ## DEPLOYED LINK:
 **FRONTEND**: https://pocketportal.pages.dev/
+
 **BACKEND**: https://pocketportal-doraemon-gadgets.onrender.com/ping
 
 - ## About
