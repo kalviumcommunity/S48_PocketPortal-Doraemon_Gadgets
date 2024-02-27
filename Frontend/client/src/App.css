@@ -4,18 +4,69 @@
   /* padding: 2rem; */
   text-align: center;
 }
+.flex{
+  display: flex;
+}
 
 #nav{
   display: flex;
-  height: 10vw;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background-color: blue;
+  background-color: #0972ba;
   width: 100vw;
+  /* border-bottom: #0972ba 5px solid; */
+}
+#logoandname{
+  justify-content: center;
+  height: 10vh;
+  align-items: center;
 }
 img{
   height: 50%;
 }
 #pocket{
-  border:5px solid #26a9e1
+  width: 30vw;
+}
+#gadgetimg{
+  width: 30vw;
+  
+}
+h6{
+  margin: 0;
+  text-align: center;
+}
+#actions{
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+#gadgetInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#gadgetBox{
+  background-color: #0972ba;
+  width: 30vw;
+  padding: 1%;
+  border-radius:3%;margin: 5%;
+  scale: 0.9;
+  
+}
+h3{
+  margin: 0;
+}
+#welcomeh1{
+  margin-bottom:5px ;
+}
+button{
+  background-color: #fdd404;
+  border: none;
+  margin: 1%;
+  padding: 2%;
+}
+#welcomepage{
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
 }

@@ -1,0 +1,7 @@
+[{
+    "_id":{"id":"65d342d5372e5708886d755d"},
+    "gadget_id":{"$numberInt":"1"},
+    "gadget_name":"Anywhere Door",
+    "description":"A door that can transport anyone to any location they desire simply by stepping through it.",
+    "ratings":"5/5","category":"Transportation"}
+]
