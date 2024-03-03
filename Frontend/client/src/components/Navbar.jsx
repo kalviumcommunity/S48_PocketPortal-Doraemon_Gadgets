@@ -8,11 +8,11 @@ export default function Navbar() {
       <h1>PocketPortal : Pick your favourite Gadgets</h1>
       
       </div>
-      <div className='flex'>
+      {/* <div className='flex'>
         <button>Login/Sign-up</button>
         <button>MyPocket</button>
         <button>About</button>
-      </div>
+      </div> */}
     </div>
   )
 }
