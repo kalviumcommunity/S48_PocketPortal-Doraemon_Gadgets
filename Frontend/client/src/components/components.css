@@ -1,7 +1,6 @@
-.flex{
+  .flex{
     display: flex;
   }
-  
   #nav{
     display: flex;
     justify-content: space-around;
@@ -22,14 +21,13 @@
   }
   #gadgetimg{
     width: 30vw;
-    
   }
   h6{
     margin: 0;
     text-align: center;
   }
   #actions{
-    width: 100%;
+    width: 50%;
     display: flex;
     justify-content: right;
   }
@@ -43,8 +41,7 @@
     width: 30vw;
     padding: 1%;
     border-radius:3%;margin: 5%;
-    scale: 0.9;
-    
+    scale: 0.9; 
   }
   h3{
     margin: 0;
@@ -57,6 +54,7 @@
     border: none;
     width: 100%;
     height: 3em;
+    margin: 2%;
   }
   #welcomepage{
     justify-content: center;
@@ -98,7 +96,7 @@
     left: 78%;
   }
   /* AddGadgetForm.jsx */
-#AddGadgetFormContainer{
+#AddGadgetFormContainer,#UpdateGadgetFormContainer{
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -107,7 +105,7 @@
     align-items: center;
   }
 
-  #AddGadgetForm{
+  #AddGadgetForm ,#UpdateGadgetForm{
     display: flex;
     flex-direction: column;
     align-items: center;
