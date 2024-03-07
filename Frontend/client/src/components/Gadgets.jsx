@@ -25,6 +25,19 @@ import png1 from '../assets/png1.png'
     navigate('/addEntity');
   };
 
+  const handleUpdateGadgetClick = (id) => {
+    navigate(`/updateEntity/${id}`);
+  };
+
+  const handleDeleteGadgetClick = (id)=>{
+    axios.delete('http://localhost:8000/api/deleteGadget/'+id)
+    .then((res)=>{
+    window.location.reload()
+    console.log(res)
+  })
+    .catch((err)=>{console.log(err)})
+  }
+
   return (
     <div>
       <div id="nav" className='flex'>
@@ -44,9 +57,14 @@ import png1 from '../assets/png1.png'
             <div  id="imgdiv">
               <img  src={gadget.image} alt="" />
             </div>
+            {/* <p>{gadget._id}</p> */}
             <p>{gadget.description}</p>
             <p>{gadget.category}</p>
             <p>{gadget.ratings}</p>
+            <div id="actions" className="flex">
+              <button onClick={(e)=>handleUpdateGadgetClick(gadget._id)}>Edit</button>
+              <button onClick={(e)=>handleDeleteGadgetClick(gadget._id)}>Delete</button>
+            </div>
        </div>
         )
       )}
