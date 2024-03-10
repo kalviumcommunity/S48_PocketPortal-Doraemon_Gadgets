@@ -59,7 +59,6 @@ router.post('/addUser', async (req, res) =>{
   }
 });
 
-
 router.post('/login', async(req, res) =>{
   try{
     const {username, password} = req.body;
@@ -81,6 +80,8 @@ router.post('/login', async(req, res) =>{
     res.status(500).json({error: 'Internal Server Error'});
   }
 });
+
+
 // Update an item by ID
 router.put('/updateGadget/:id', (req, res) => {
   const id = req.params.id;
