@@ -38,6 +38,12 @@ import png1 from '../assets/png1.png'
     .catch((err)=>{console.log(err)})
   }
 
+  const handleLogout = () => {
+    document.cookie = 'username=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
+    navigate('/login');
+    console.log(document.cookie)
+  };
+
   return (
     <div>
       <div id="nav" className='flex'>
@@ -47,6 +53,7 @@ import png1 from '../assets/png1.png'
       </div>
       <div className='flex'>
       <button onClick={handleAddGadgetClick}>Add Gadget</button>
+      <button onClick={handleLogout}>Logout</button>
       </div>
     </div>
       <div id="gadgetsgrid">
