@@ -56,6 +56,7 @@ import png1 from '../assets/png1.png'
       </div>
       <div className='flex'>
       <button onClick={handleAddGadgetClick}>Add Gadget</button>
+      <button onClick={handleLogout}>Logout</button>
       </div>
     </div>
       <div id="gadgetsgrid">
