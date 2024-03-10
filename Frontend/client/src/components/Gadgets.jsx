@@ -41,7 +41,7 @@ import png1 from '../assets/png1.png'
   const handleLogout = () => {
     document.cookie = 'username=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
     navigate('/login');
-    console.log(document.cookie)
+    document.cookie? console.log(document.cookie):console.log("No cookies found")
   };
 
   return (
