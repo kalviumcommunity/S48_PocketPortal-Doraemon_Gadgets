@@ -38,6 +38,15 @@ import png1 from '../assets/png1.png'
     .catch((err)=>{console.log(err)})
   }
 
+
+  const handleLogout = () => {
+    document.cookie = 'username=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
+    navigate('/login');
+    document.cookie? console.log(document.cookie):console.log("No cookies found")
+  };
+
+
+
   return (
     <div>
       <div id="nav" className='flex'>

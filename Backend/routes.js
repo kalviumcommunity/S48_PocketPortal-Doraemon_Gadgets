@@ -59,6 +59,29 @@ router.post('/addUser', async (req, res) =>{
   }
 });
 
+router.post('/login', async(req, res) =>{
+  try{
+    const {username, password} = req.body;
+    const validationSchema = Joi.object({
+      username: Joi.string().required(),
+      password: Joi.string().required(),
+    });
+
+    const validationResult = await validationSchema.validateAsync({username,password});
+    const user = await usersmodel.findOne({username: validationResult.username,password: validationResult.password});
+
+    if(user){
+      res.json({success: true, message: 'Login successful'});
+    } else{
+      res.status(401).json({success: false, message: 'Invalid username or password'});
+    }
+  } catch(err){
+    console.error(err);
+    res.status(500).json({error: 'Internal Server Error'});
+  }
+});
+
+
 // Update an item by ID
 router.put('/updateGadget/:id', (req, res) => {
   const id = req.params.id;
