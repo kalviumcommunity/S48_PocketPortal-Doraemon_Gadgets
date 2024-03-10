@@ -1,11 +1,31 @@
 const express = require('express');
 const router = express.Router();
 const Doraemongadgetsmodel = require('./Model/doraemongadgets')
+const usersmodel = require('./Model/users')
+const Joi = require('joi');
 
+const userSchema = Joi.object({
+  username: Joi.string().required(),
+  password: Joi.string().required(),
+});
+
+const gadgetSchema = Joi.object({
+  name: Joi.string().required(),
+  description: Joi.string().required(),
+  image: Joi.string().required(),
+  ratings: Joi.string().required(),
+  category: Joi.string().required(),
+});
 // Get all Gadgets
 router.get('/getGadgets', (req, res) => {
   Doraemongadgetsmodel.find()
       .then(gadgets => res.json(gadgets))
+      .catch(err => res.json(err));
+})
+
+router.get('/getUsers', (req, res) => {
+  usersmodel.find()
+      .then(users => res.json(users))
       .catch(err => res.json(err));
 })
 
@@ -17,10 +37,26 @@ router.get('/getGadgets/:id', (req,res)=>{
 });
 
 // Create a new Gadget
-router.post('/addGadget',  (req, res) => {
-  Doraemongadgetsmodel.create(req.body)
-  .then(data=>res.json(data))
-  .catch(err=>res.json(err))
+router.post('/addGadget', async (req, res) =>{
+  try{
+    const validationResult = await gadgetSchema.validateAsync(req.body);
+    const data = await Doraemongadgetsmodel.create(validationResult);
+    res.json(data);
+  }catch(err){
+    console.error(err);
+    res.status(400).json({ error:'Validation Error'});
+  }
+});
+
+router.post('/addUser', async (req, res) =>{
+  try{
+    const validationResult = await userSchema.validateAsync(req.body);
+    const data = await usersmodel.create(validationResult);
+    res.json(data);
+  }catch(err){
+    console.error(err);
+    res.status(400).json({ error: 'Validation Error' });
+  }
 });
 
 // Update an item by ID
