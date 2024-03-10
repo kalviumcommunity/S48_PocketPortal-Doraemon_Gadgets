@@ -96,7 +96,7 @@
     left: 78%;
   }
   /* AddGadgetForm.jsx */
-#AddGadgetFormContainer,#UpdateGadgetFormContainer{
+#AddGadgetFormContainer, #LoginContainer,#UpdateGadgetFormContainer,#SignupContainer{
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -105,7 +105,7 @@
     align-items: center;
   }
 
-  #AddGadgetForm ,#UpdateGadgetForm{
+  #AddGadgetForm ,#Login,#UpdateGadgetForm,#Signup{
     display: flex;
     flex-direction: column;
     align-items: center;
