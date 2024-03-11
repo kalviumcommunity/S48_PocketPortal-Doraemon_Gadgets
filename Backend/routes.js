@@ -3,7 +3,8 @@ const router = express.Router();
 const Doraemongadgetsmodel = require('./Model/doraemongadgets')
 const usersmodel = require('./Model/users')
 const Joi = require('joi');
-
+const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser');
 const userSchema = Joi.object({
   username: Joi.string().required(),
   password: Joi.string().required(),
@@ -71,7 +72,11 @@ router.post('/login', async(req, res) =>{
     const user = await usersmodel.findOne({username: validationResult.username,password: validationResult.password});
 
     if(user){
-      res.json({success: true, message: 'Login successful'});
+    const accessToken = jwt.sign({username},process.env.ACCESS_TOKEN_SECRET)
+    console.log(accessToken);
+     res.cookie('token', accessToken);
+
+      res.json({success: true, message: 'Login successful',accessToken:accessToken});
     } else{
       res.status(401).json({success: false, message: 'Invalid username or password'});
     }
