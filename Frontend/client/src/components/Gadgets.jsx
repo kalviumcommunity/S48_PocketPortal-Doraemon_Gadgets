@@ -9,7 +9,7 @@ import png1 from '../assets/png1.png'
  function Gadgets() {
   const [gadgets,setGadgets]=useState([])
   const navigate = useNavigate();
-  
+  console.log(document.cookie)
   useEffect(()=>{
     axios.get("http://localhost:8000/api/getGadgets")
     .then(

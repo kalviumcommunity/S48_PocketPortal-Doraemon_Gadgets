@@ -22,6 +22,7 @@ const Login = () => {
       if(response.data.success){
         setCookie('username', username, 1);
         navigate('/Gadgets');
+        setCookie('acessToken',response.data.accessToken)
         console.log(document.cookie)
       }else{
         console.error('Login failed:',response.data.message);
