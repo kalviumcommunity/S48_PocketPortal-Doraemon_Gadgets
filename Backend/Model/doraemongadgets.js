@@ -10,3 +10,4 @@ const DoraemongadgetsSchema = new mongoose.Schema({
 
 const Doraemongadgetsmodel = mongoose.model("gadgets", DoraemongadgetsSchema);
 module.exports = Doraemongadgetsmodel;
+

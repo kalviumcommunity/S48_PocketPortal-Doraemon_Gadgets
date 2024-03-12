@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 
-const UpdateGadgetForm = () => {
+  const UpdateGadgetForm = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
@@ -11,6 +11,7 @@ const UpdateGadgetForm = () => {
   const [ratings, setRatings] = useState('');
   const {id} = useParams();
   const navigate = useNavigate();
+
 
   useEffect(()=>{
     axios.get(`http://localhost:8000/api/getGadgets/${id}`)
