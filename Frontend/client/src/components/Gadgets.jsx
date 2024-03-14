@@ -8,6 +8,7 @@ import png1 from '../assets/png1.png'
 
  function Gadgets() {
   const [gadgets,setGadgets]=useState([])
+  const [users,setUsers] = useState([])
   const navigate = useNavigate();
   // console.log(document.cookie)
   useEffect(()=>{
@@ -16,6 +17,17 @@ import png1 from '../assets/png1.png'
       users=>{
         // console.log(users.data)
         setGadgets(users.data)}
+    )
+    .catch(err=>
+      console.log(err)
+    )
+  },[])
+
+  useEffect(()=>{
+    axios.get("http://localhost:8000/api/getUsers")
+    .then(
+      users=>{
+        setUsers(users.data)}
     )
     .catch(err=>
       console.log(err)
@@ -39,6 +51,11 @@ import png1 from '../assets/png1.png'
     .catch((err)=>{console.log(err)})
   }
 
+  function getCookie(name) {
+    let cookieArray = document.cookie.split('; ');
+    let cookie = cookieArray.find((row) => row.startsWith(name + '='));
+    return cookie ? cookie.split('=')[1] : null;
+  }
 
   const handleLogout = () => {
     document.cookie = 'username=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
@@ -46,7 +63,11 @@ import png1 from '../assets/png1.png'
     navigate('/login');
     document.cookie? console.log(document.cookie):console.log("No cookies found")
   };
-
+  const username=getCookie('username')
+  const [selectedValue , setSelectedvalue] = useState(username)
+  const handleSelectChange=(e)=>{
+    setSelectedvalue(e.target.value)
+  }
   return (
     <div>
       <div id="nav" className='flex'>
@@ -55,12 +76,17 @@ import png1 from '../assets/png1.png'
       <h1>PocketPortal : Pick your favourite Gadgets</h1>  
       </div>
       <div className='flex'>
+        <select  value={selectedValue} onChange={handleSelectChange}>
+          {users.map((user,i)=>(
+            <option key={i} value={user.username}>{user.username}</option>
+          ))}
+        </select>
       <button onClick={handleAddGadgetClick}>Add Gadget</button>
       <button onClick={handleLogout}>Logout</button>
       </div>
     </div>
       <div id="gadgetsgrid">
-      {gadgets.map(
+      {gadgets.filter(item=>item.createdby==selectedValue).map(
         (gadget,i)=>(
           <div id="gadgetEntity" key={i}>
             <h2>{gadget.name}</h2>

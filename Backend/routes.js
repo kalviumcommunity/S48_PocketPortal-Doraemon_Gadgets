@@ -18,6 +18,7 @@ const gadgetSchema = Joi.object({
   image: Joi.string().required(),
   ratings: Joi.string().required(),
   category: Joi.string().required(),
+  createdby: Joi.string().required(),
 });
 // Get all Gadgets
 router.get('/getGadgets', (req, res) => {
@@ -44,8 +45,8 @@ router.post('/addGadget', async (req, res) => {
   try {
     const validationResult = await gadgetSchema.validateAsync(req.body);
     // const { username } = req.cookies; // Get username from cookies
-    console.log(req.cookies['username'])
-    const data = await Doraemongadgetsmodel.create({ ...validationResult, createdby: "pawan" });
+    console.log(req.body.createdby)
+    const data = await Doraemongadgetsmodel.create(validationResult);
     res.json(data);
   } catch (err) {
     console.error(err);
