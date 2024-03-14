@@ -17,7 +17,7 @@ const AddGadgetForm = () => {
      {name,description,image,category,ratings,})
      .then(result => {
       console.log(result)
-      navigate('/');
+      navigate('/Gadgets');
       alert('Gadget added successfully!');
     })
      .catch(error=>console.error('Error adding entity:',error))

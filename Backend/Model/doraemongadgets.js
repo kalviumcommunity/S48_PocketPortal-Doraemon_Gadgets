@@ -6,6 +6,7 @@ const DoraemongadgetsSchema = new mongoose.Schema({
   image:String,
   ratings: String,
   category: String,
+  createdby: String,
 },{ versionKey: false });
 
 const Doraemongadgetsmodel = mongoose.model("gadgets", DoraemongadgetsSchema);

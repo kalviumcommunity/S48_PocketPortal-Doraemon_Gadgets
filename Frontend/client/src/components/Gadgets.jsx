@@ -9,11 +9,12 @@ import png1 from '../assets/png1.png'
  function Gadgets() {
   const [gadgets,setGadgets]=useState([])
   const navigate = useNavigate();
-  console.log(document.cookie)
+  // console.log(document.cookie)
   useEffect(()=>{
     axios.get("http://localhost:8000/api/getGadgets")
     .then(
-      users=>{console.log(users.data)
+      users=>{
+        // console.log(users.data)
         setGadgets(users.data)}
     )
     .catch(err=>
@@ -42,12 +43,9 @@ import png1 from '../assets/png1.png'
   const handleLogout = () => {
     document.cookie = 'username=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
     document.cookie = 'acessToken=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/';
-
     navigate('/login');
     document.cookie? console.log(document.cookie):console.log("No cookies found")
   };
-
-
 
   return (
     <div>
