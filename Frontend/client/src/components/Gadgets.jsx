@@ -5,6 +5,7 @@ import { useState,useEffect } from 'react'
 import './components.css'
 import Navbar from './Navbar'
 import png1 from '../assets/png1.png'
+import Dlogo from '../assets/Dlogo.png'
 
  function Gadgets() {
   const [gadgets,setGadgets]=useState([])
@@ -72,7 +73,8 @@ import png1 from '../assets/png1.png'
     <div>
       <div id="nav" className='flex'>
       <div id="logoandname" className="flex">
-      <img src={png1} alt="" />
+      <img src={Dlogo} id="Dlogo" alt="" />
+      <img src={png1} id="Dimg" alt="" />
       <h1>PocketPortal : Pick your favourite Gadgets</h1>  
       </div>
       <div className='flex'>
@@ -105,6 +107,9 @@ import png1 from '../assets/png1.png'
         )
       )}
     </div>
+    <div  id="footer">
+        <p>Added by {username}</p>
+      </div>
     </div>
   )
 }
