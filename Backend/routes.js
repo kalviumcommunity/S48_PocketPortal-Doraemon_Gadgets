@@ -18,6 +18,7 @@ const gadgetSchema = Joi.object({
   image: Joi.string().required(),
   ratings: Joi.string().required(),
   category: Joi.string().required(),
+  createdby: Joi.string().required(),
 });
 // Get all Gadgets
 router.get('/getGadgets', (req, res) => {
@@ -40,14 +41,16 @@ router.get('/getGadgets/:id', (req,res)=>{
 });
 
 // Create a new Gadget
-router.post('/addGadget', async (req, res) =>{
-  try{
+router.post('/addGadget', async (req, res) => {
+  try {
     const validationResult = await gadgetSchema.validateAsync(req.body);
+    // const { username } = req.cookies; // Get username from cookies
+    console.log(req.body.createdby)
     const data = await Doraemongadgetsmodel.create(validationResult);
     res.json(data);
-  }catch(err){
+  } catch (err) {
     console.error(err);
-    res.status(400).json({ error:'Validation Error'});
+    res.status(400).json({ error: 'Validation Error' });
   }
 });
 
@@ -75,7 +78,7 @@ router.post('/login', async(req, res) =>{
 
     if(user){
     const accessToken = jwt.sign({username},process.env.ACCESS_TOKEN_SECRET)
-    console.log(accessToken);
+    res.cookie('username',username)
     res.cookie('token', accessToken);
       res.json({success: true, message: 'Login successful',accessToken:accessToken});
     } else{

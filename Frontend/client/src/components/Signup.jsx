@@ -14,7 +14,7 @@ const Signup = () => {
      {username,password})
      .then(result => {
       console.log(result)
-      navigate('/Gadgets');
+      navigate('/login');
       alert('Signed up successfully!');
     })
      .catch(error=>console.error('Error adding entity:',error))
