@@ -9,14 +9,12 @@ function App() {
   return (
       <>
         <Routes>
-          <Route path="https://main--pocketportal.netlify.app/addEntity" element={<AddGadgetForm/>} />
-          <Route path="https://main--pocketportal.netlify.app/updateEntity/:id" element={<UpdateGadgetForm />} />
-          <Route path="https://main--pocketportal.netlify.app/Gadgets" element={<Gadgets/>} />
-          <Route path="https://main--pocketportal.netlify.app/login" element={<Login/>}></Route>
-          <Route path="https://main--pocketportal.netlify.app/" element={<Signup/>}></Route>
+          <Route path="/addEntity" element={<AddGadgetForm/>} />
+          <Route path="/updateEntity/:id" element={<UpdateGadgetForm />} />
+          <Route path="/Gadgets" element={<Gadgets/>} />
+          <Route path="/login" element={<Login/>}></Route>
+          <Route path="/" element={<Signup/>}></Route>
         </Routes>
-        {/* <Login></Login> */}
-        {/* <Signup></Signup> */}
       </>
   );
 }
