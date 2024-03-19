@@ -14,7 +14,7 @@ import { useParams } from 'react-router-dom';
 
 
   useEffect(()=>{
-    axios.get(`http://localhost:8000/api/getGadgets/${id}`)
+    axios.get(`https://pocketportal-doraemon-gadgets-2.onrender.com/api/getGadgets/${id}`)
     .then(gadget=>{console.log(gadget.data)
       setName(gadget.data.name)
       setDescription(gadget.data.description)

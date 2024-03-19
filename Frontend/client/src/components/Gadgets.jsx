@@ -13,7 +13,7 @@ import Dlogo from '../assets/Dlogo.png'
   const navigate = useNavigate();
   // console.log(document.cookie)
   useEffect(()=>{
-    axios.get("http://localhost:8000/api/getGadgets")
+    axios.get("https://pocketportal-doraemon-gadgets-2.onrender.com/api/getGadgets")
     .then(
       users=>{
         // console.log(users.data)
@@ -25,7 +25,7 @@ import Dlogo from '../assets/Dlogo.png'
   },[])
 
   useEffect(()=>{
-    axios.get("http://localhost:8000/api/getUsers")
+    axios.get("https://pocketportal-doraemon-gadgets-2.onrender.com/api/getUsers")
     .then(
       users=>{
         setUsers(users.data)}
