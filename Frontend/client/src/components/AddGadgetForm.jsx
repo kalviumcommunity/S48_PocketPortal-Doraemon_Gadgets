@@ -8,20 +8,28 @@ const AddGadgetForm = () => {
   const [category, setCategory] = useState('');
   const [image, setimage] = useState('');
   const [ratings, setRatings] = useState('');
-
   const navigate = useNavigate();
 
+  function getCookie(name) {
+    let cookieArray = document.cookie.split('; ');
+    let cookie = cookieArray.find((row) => row.startsWith(name + '='));
+    return cookie ? cookie.split('=')[1] : null;
+  }
+
+  const createdby = getCookie('username')
   const handleFormSubmit =  (e) => {
     e.preventDefault();
     axios.post('http://localhost:8000/api/addGadget',
-     {name,description,image,category,ratings,})
+     {name,description,image,category,ratings,createdby})
      .then(result => {
       console.log(result)
-      navigate('/');
+      navigate('/Gadgets');
       alert('Gadget added successfully!');
     })
      .catch(error=>console.error('Error adding entity:',error))
   };
+
+
 
   return (
     <div id="AddGadgetFormContainer">
