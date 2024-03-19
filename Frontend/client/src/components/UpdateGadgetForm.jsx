@@ -27,7 +27,7 @@ import { useParams } from 'react-router-dom';
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.put(`http://localhost:8000/api/updateGadget/${id}`,
+    axios.put(`https://pocketportal-doraemon-gadgets-2.onrender.com/api/updateGadget/${id}`,
      {name,description,image,category,ratings,})
      .then(result => {
       console.log(result)

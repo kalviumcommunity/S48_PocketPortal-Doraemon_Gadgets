@@ -44,7 +44,7 @@ import Dlogo from '../assets/Dlogo.png'
   };
 
   const handleDeleteGadgetClick = (id)=>{
-    axios.delete('http://localhost:8000/api/deleteGadget/'+id)
+    axios.delete('https://pocketportal-doraemon-gadgets-2.onrender.com/api/deleteGadget/'+id)
     .then((res)=>{
     window.location.reload()
     console.log(res)

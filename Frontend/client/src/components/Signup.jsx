@@ -10,7 +10,7 @@ const Signup = () => {
 
   const handleFormSubmit =  (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8000/api/addUser',
+    axios.post('https://pocketportal-doraemon-gadgets-2.onrender.com/api/addUser',
      {username,password})
      .then(result => {
       console.log(result)

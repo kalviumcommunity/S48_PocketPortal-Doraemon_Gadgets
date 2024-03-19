@@ -19,7 +19,7 @@ const AddGadgetForm = () => {
   const createdby = getCookie('username')
   const handleFormSubmit =  (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8000/api/addGadget',
+    axios.post('https://pocketportal-doraemon-gadgets-2.onrender.com/api/addGadget',
      {name,description,image,category,ratings,createdby})
      .then(result => {
       console.log(result)
