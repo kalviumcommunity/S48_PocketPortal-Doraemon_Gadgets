@@ -1,7 +1,7 @@
 POCKET PORTAL: DORAEMON'S GADGETS
 
 - ## DEPLOYED LINK:
-**FRONTEND**: [https://pocketportal.pages.dev/](https://pocketportal.pages.dev/)
+**FRONTEND**:https://pocketportal.netlify.app/
 
 **BACKEND**: https://pocketportal-doraemon-gadgets-2.onrender.com/
 
